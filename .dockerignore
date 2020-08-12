@@ -1,0 +1,8 @@
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.git
+.gitignore
+.env
+.ipynb_checkpoints/
+/TODO.md
+/venv

@@ -2,7 +2,7 @@
 
 This repository contains: 
 
-- Code for an AWS Lambda function to scrape newly introduced US Congressional legislation from the ProPublica API and insert it into an AWS DynamoDB instance;\
+- Code for an AWS Lambda function to scrape newly introduced US Congressional legislation from the ProPublica API and insert it into an AWS DynamoDB instance;
 - An application, hosted in a Docker container on AWS ElasticBeanstalk and [available here](http://pollbase-dev.us-west-1.elasticbeanstalk.com/), to retrieve and make available all active legislation from the above DynamoDB instance.
 
 The long-term vision is:

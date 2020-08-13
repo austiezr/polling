@@ -7,6 +7,6 @@ This repository contains:
 
 The long-term vision is:
 
-- To have the legislative information populate into a publically availble wiki to facilitate easier access to and understanding of\
+- To have the legislative information populate into a publically availble wiki to facilitate easier access to and understanding of
 the legislation, in a hope to foster greater political engagement at a more meaningful level than a four-year presidential electoral cycle;
 - To use information extracted from this legislation to inform attempts at a non-biased, data-driven approach to polling.

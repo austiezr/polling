@@ -2,36 +2,21 @@
 <html>
     <head>
         {% block title %}
-            <title>Legislation</title>
+            <title>Index</title>
         {% endblock %}
     </head>
 
     <body>
             <!-- PAGE CONTENTS -->
-            <div>
-                    <a href="/refresh">Refresh</a>
-            </div>
             <div id="title">
-                <h1>Current Active U.S. Congress Legislation</h1>
+                <h1>Choose Your Content:</h1>
             </div>
 
             <div id="content">
-                {% block content %}
-                    {% for element in response %}
-                        <br>
-                        <b>Bill Number:</b> {{ element.number.S }}
-                        <ul>
-                            <li>Title: {{ element.title.S }}
-                            <li>Sponsor Name: {{ element.sponsor_title.S }} {{ element.sponsor_name.S }} | {{ element.sponsor_state.S }} | {{ element.sponsor_party.S }}
-                            <li>Number of Cosponsors: {{ element.cosponsors.N }}
-                            <li>Introduced: {{ element.introduced_date.S }}
-                            <li>Latest Major Action: {{ element.latest_major_action.S }}
-                            <li>Date of LMA: {{ element.latest_major_action_date.S }}
-                            <li>URL: <a href='{{element.congressdotgov_url.S}}/text'>{{ element.number.S }}</a>
-                        </ul>
-                        <br>
-                    {% endfor %}
-                {% endblock %}
+                <ul>
+                    <h2><a href="/bills">Active US Congressional Legislation</a></h2>
+                    <h2><a href="/lobbying">Recent Lobbying Representations</a></h2>
+                </ul>
             </div>
 
             <!-- FOOTER -->

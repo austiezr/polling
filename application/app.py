@@ -23,6 +23,11 @@ dynamodb = boto3.client('dynamodb',
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+
+@app.route('/bills')
+def bills():
     response = dynamodb.scan(
         TableName='Bills',
         Select='ALL_ATTRIBUTES',
@@ -32,13 +37,22 @@ def index():
     response = sorted(response['Items'],
                       key=lambda x: x['latest_major_action_date_unix']['N'],
                       reverse=True)
-    return render_template('index.html',
+    return render_template('bills.html',
                            response=response)
 
 
-@app.route('/refresh')
-def refresh():
-    return redirect('/')
+@app.route('/lobbying')
+def lobbying():
+    response = dynamodb.scan(
+        TableName='Lobbying_Representations',
+        Select='ALL_ATTRIBUTES'
+    )
+    response = sorted(response['Items'],
+                      key=lambda x: x['latest_filing_date_unix']['N'],
+                      reverse=True)[:20]
+
+    return render_template('lobbying.html',
+                           response=response)
 
 
 if __name__ == "__main__":

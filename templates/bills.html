@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        {% block title %}
+            <title>Legislation</title>
+        {% endblock %}
+    </head>
+
+    <body>
+            <!-- PAGE CONTENTS -->
+            <div>
+                    <a href="/bills">Refresh</a> | <a href="/lobbying">Lobbying Representations</a>
+            </div>
+            <div id="title">
+                <h1>Current Active U.S. Congress Legislation</h1>
+            </div>
+
+            <div id="content">
+                {% block content %}
+                    {% for element in response %}
+                        <br>
+                        <h3>Bill Number: {{ element.number.S }}</h3>
+                        <ul>
+                            <li>Title: {{ element.title.S }}</li>
+                            <li><b>Sponsor Name:</b> {{ element.sponsor_title.S }} {{ element.sponsor_name.S }} | {{ element.sponsor_state.S }} | {{ element.sponsor_party.S }}</li>
+                            <li><b>Number of Cosponsors:</b> {{ element.cosponsors.N }}</li>
+                            <li><b>Introduced:</b> {{ element.introduced_date.S }}</li>
+                            <li><b>Latest Major Action:</b> {{ element.latest_major_action.S }}</li>
+                            <li><b>Date of LMA:</b> {{ element.latest_major_action_date.S }}</li>
+                            <li><b>URL:</b> <a href='{{element.congressdotgov_url.S}}/text'>{{ element.number.S }}</a></li>
+                        </ul>
+                        <br>
+                    {% endfor %}
+                {% endblock %}
+            </div>
+
+            <!-- FOOTER -->
+            <div id="footer">
+                <hr>
+                &copy; Copyright 2020 A. Z. Robinson |
+                <a href="https://github.com/austiezr">source</a>
+            </div>
+
+    </body>
+</html>

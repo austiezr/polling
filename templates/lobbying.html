@@ -21,9 +21,9 @@
                         <br>
                         <h3>Client: {{ element.client.S }}</h3>
                         <ul>
-                            <li><b>Issues:</b> {% for entry in element.issues.L %} {{ entry.S }} <br> {% endfor %}</li>
+                            <li><b>Issues:</b> {% for entry in element.issues.L %} {{ entry.S }} {% endfor %}</li>
                             <li><b>Registrant:</b> {{ element.registrant.S }}</li>
-                            <li><b>Lobbyists:</b> {% for entry in element.lobbyists.L %} {{ entry.S }} <br> {% endfor %}</li>
+                            <li><b>Lobbyists:</b> {% for entry in element.lobbyists.L %} {{ entry.S }} {% endfor %}</li>
                             <li><b>Latest Filing Date:</b> {{ element.latest_filing_date.S }}</li>
                             <li><b>Latest Filing PDF:</b> <a href="{{element.latest_filing_pdf.S}}">{{ element.representation_id.N }}</a></li>
                         </ul>
